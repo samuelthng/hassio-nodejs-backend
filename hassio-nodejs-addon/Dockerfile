@@ -10,10 +10,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN apk add --no-cache \
     nodejs \
-    npm
-
-COPY nodejs /
-RUN cd / && npm install --unsafe-perm
+    npm \
+    git
 
 COPY run.sh /
 RUN chmod a+x /run.sh

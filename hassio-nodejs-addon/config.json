@@ -15,8 +15,12 @@
     "8000/tcp": "Webservice API"
   },
   "map": [],
-  "options": {},
-  "schema": {},
+  "options": {
+    "repository": "Repository of your node application to be run on the docker image."
+  },
+  "schema": {
+    "repository": "url"
+  },
   "hassio_api": true,
   "homeassistant_api": true
 }

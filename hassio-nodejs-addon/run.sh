@@ -1,8 +1,13 @@
 #!/usr/bin/with-contenv bashio
 set +u
+REPOSITORY="$(bashio::config 'repository')"
+bashio::log.info "Repository: $REPOSITORY"
+bashio::log.info "Cloning…"
+git clone $REPOSITORY /repository
 
-export CONFIG_VALUE=$(bashio::config 'some config here')
-bashio::log.info "Test config value as ${CONFIG_VALUE}."
+bashio::log.info "Installing Packages…"
+cd /repository
+npm install
 
-bashio::log.info "Starting service."
+bashio::log.info "Starting Application…"
 npm run start
