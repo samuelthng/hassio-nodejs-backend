@@ -14,7 +14,7 @@ REPOSITORY="$(bashio::config 'repository')"
 if [[ -d $REPO_DIR ]]
 then
 	cd $REPO_DIR
-	$CURRENT_REMOTE="$(git config --get remote.origin.url)"
+	CURRENT_REMOTE="$(git config --get remote.origin.url)"
 	if [[ $CURRENT_REMOTE == *$REPOSITORY* ]]
 	then
 		bashio::log.info "Repository already exists, pulling latest…"
