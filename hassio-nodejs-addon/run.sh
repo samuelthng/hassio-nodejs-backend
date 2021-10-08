@@ -6,10 +6,10 @@ git --version
 
 REPOSITORY="$(bashio::config 'repository')"
 bashio::log.info "Cloning $REPOSITORY…"
-git clone $REPOSITORY /repository
+git clone $REPOSITORY /data
 
 bashio::log.info "Installing Packages…"
-cd /repository
+cd /data
 npm install
 
 bashio::log.info "Starting Application…"
