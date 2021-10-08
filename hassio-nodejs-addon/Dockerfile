@@ -13,6 +13,16 @@ RUN apk add --no-cache \
     npm \
     git
 
+RUN bashio::log.info "Cloning $(bashio::config 'repository')…" \
+    mkdir /repository \
+    git clone $(bashio::config 'repository') /repository \
+    cd /repository
+
+WORKDIR /repository
+
+RUN bashio::log.info "Installing npm packages…" \
+    npm install
+
 COPY run.sh /
 RUN chmod a+x /run.sh
 
