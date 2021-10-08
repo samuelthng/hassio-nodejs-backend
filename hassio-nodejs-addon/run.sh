@@ -24,10 +24,10 @@ then
 		bashio::log.info "Repository has changed, purging directory…"
 		cd /data
 		rm -rf $REPO_DIR
-		clone_repository()
+		clone_repository
 	fi
 else
-	clone_repository()
+	clone_repository
 fi
 
 bashio::log.info "Installing Packages…"
